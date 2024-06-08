@@ -14,8 +14,8 @@ function calculatedsum(counter){
 // handlefirstRequest ia aysnchronous callback ()
 
 function handlefirstRequest(req,res){
-    
-   let finalsum = calculatedsum(100)
+ let counter = req.query.counter;//user can input the value
+   let finalsum = calculatedsum(counter)
     console.log(finalsum);
     let answer = "the sum is"+ finalsum;
 
