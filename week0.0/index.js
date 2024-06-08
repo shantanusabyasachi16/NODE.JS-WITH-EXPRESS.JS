@@ -40,14 +40,3 @@
 
 
 
-
-
-//  function calculatedsum(counter){
-//     let sum = 0;
-//     for (let i = 0; i < counter; i++) {
-//  sum = sum +i
-//     }
-//     return sum;
-//  }
-
-//  console.log(calculatedsum(100));//4950  
