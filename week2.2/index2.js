@@ -31,7 +31,7 @@ function handlefirstRequest(req,res){
 
 
 app.get('/handle',handlefirstRequest )
-// /handle :this is the route where we want the handlefirstReques () to  e showed
+// /handle :this is the route where we want the handlefirstReques () to  be showed
 
 //app.get('/handle' anytime there is a request then it triggers or calls  the handlefirstRequesfunction
 
