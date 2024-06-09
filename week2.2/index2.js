@@ -15,7 +15,7 @@ function calculatedsum(counter){
 
 function handlefirstRequest(req,res){
     //query paramameter
- let counter = req.query.counter;//user can input the value
+ let counter = req.query.counter;//user can input the value in url
    let finalsum = calculatedsum(counter)
     console.log(finalsum);
     let answer = "the sum is"+ finalsum;
