@@ -12,10 +12,44 @@
         // THIS IS FOR THE GET METHOD
         // as we knew earlier fetch is the library that u need to use while fetching the data through the nodejs processess
         // we do need to use fetch
+function deletetodo123(){
+    console.log("done delete");
+}
+        function deletetodo(id){
+    console.log(id);
+    fetch("http://localhost:3000/todos/"+id,{
+        method:"DELETE",
+        headers:{
+                "Content-Type":"application/json"
+            }
+    }).then (deletetodo123)
+}
+
         function todocallback(data){
             console.log(data);
             let parentelement = document.getElementById("mainarea");
-            parentelement.innerHTML = JSON.stringify(data)
+       for (let i = 0; i < data.length; i++) {
+         let childElement = document.createElement("div")
+
+         let grandchildElement = document.createElement('span')
+         grandchildElement.innerHTML= data[i].title
+
+         let grandchildElement2 = document.createElement('span')
+         grandchildElement2.innerHTML= data[i].description
+
+         let grandchildElement3= document.createElement('button')
+         grandchildElement3.innerHTML= "Delete"
+         grandchildElement3.setAttribute("onclick","deletetodo("+data[i].id+")")
+
+
+         childElement.appendChild (grandchildElement)
+         childElement.appendChild (grandchildElement2)
+         childElement.appendChild (grandchildElement3)
+
+        parentelement.appendChild(childElement)
+
+    }
+           
         }
         
         function callback1(response){
@@ -30,8 +64,7 @@
        
 
     function onPress(){
-       // alert("Hi")
-
+      
        let title = document.getElementById("title").value
        let description = document.getElementById("description").value
 
