@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');//for post request, to capture body in "post" request
-
+const path = require('path')
 const app = express();
 
 const port = 3000 // tom listen http request
@@ -77,8 +77,13 @@ app.delete('/todos/:id', (req, res) => {
 
 });
 
+app.get("/", (req,res)=>{
+  res.sendFile(path.join(__dirname,"index.html"))
+})
 
-// for all other routes, return 404
+
+
+// for all other routes, return 404`
 app.use((req, res, next) => {
   res.status(404).send();
 });
@@ -87,3 +92,12 @@ app.use((req, res, next) => {
 app.listen(port,()=>{
   console.log(`Example app listening on port ${port}`)
 });
+
+//we can also install cors to avoid path directory
+
+///cors error =
+
+//A CORS (Cross-Origin Resource Sharing) error occurs when a web application makes a request to a different domain (origin) than its own, and the server at that different domain does not explicitly allow the request. 
+//This is a security feature implemented in web browsers to prevent malicious websites from making unauthorized requests to other domains.
+
+
