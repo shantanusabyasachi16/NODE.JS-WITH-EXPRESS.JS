@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<script>
+
+
+
+        // THIS IS FOR THE GET METHOD
+        // as we knew earlier fetch is the library that u need to use while fetching the data through the nodejs processess
+        // we do need to use fetch
+        function todocallback(data){
+            console.log(data);
+            let parentelement = document.getElementById("mainarea");
+            parentelement.innerHTML = JSON.stringify(data)
+        }
+        
+        function callback1(response){
+            response.json().then(todocallback)
+        }
+        function getdata(){
+        fetch("http://localhost:3000/todos",{
+           method:"GET"
+       }).then(callback1)
+    }
+       getdata();
+       
+
+    function onPress(){
+       // alert("Hi")
+
+       let title = document.getElementById("title").value
+       let description = document.getElementById("description").value
+
+      function parsedResponse(data){
+    console.log(data);
+     }
+
+        function callback(response){
+            response.json().then(parsedResponse)
+        }
+
+
+       // THIS IS FOR THE POST METHOD
+       fetch("http://localhost:3000/todos",{
+            method:"POST",
+            body: JSON.stringify({
+                title:title ,
+                description:description,
+            }),
+            headers:{
+                "Content-Type":"application/json" //to inform the server that the body of the request contains JSON data.
+            }
+        }).then(callback)
+    }
+</script>
+<body>
+    <h1>Todo Title</h1>
+    <input type="text" id="title"></input>
+    <h1>Todo Description</h1>
+    <input type="text" id="description"></input>
+    <button onclick="onPress()">Send Todo</button>
+    <div id="mainarea"></div>
+</body>
+</html>
