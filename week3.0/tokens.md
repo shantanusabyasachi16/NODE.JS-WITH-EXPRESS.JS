@@ -6,6 +6,12 @@ JWT-
 
 JSON Web Tokens (JWT) are a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs are commonly used in authentication and authorization mechanisms, particularly in modern web applications and APIs.
 
+A JWT consists of three parts:
+
+1.Header
+2.Payload
+3.Signature
+
 SECRET KEY-
 
 Secret key tokens are cryptographic tokens generated and verified using a secret key known only to the issuing and verifying parties.
