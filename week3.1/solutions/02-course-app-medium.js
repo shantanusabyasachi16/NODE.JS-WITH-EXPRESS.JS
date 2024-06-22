@@ -1,3 +1,11 @@
+// JWT
+// called as "Json Web Tokens"
+
+// JWT is commonly used for authentication and authorization in web applications because it's stateless, compact, and can be easily transmitted over HTTP headers.
+//  it's like a digital passport that securely carries information about the user (claims) from one place to another.
+
+// let us install jwt and store it in a variable
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
