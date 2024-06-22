@@ -67,7 +67,7 @@ const authenticateJwt = (req, res, next) => {
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect('mongodb+srv://kirattechnologies:iRbi4XRDdM7JMMkl@cluster0.e95bnsi.mongodb.net/courses', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
+mongoose.connect('mongodb+srv://shantanuswain23:*****@cluster0.eksny7k.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
 
 app.post('/admin/signup', (req, res) => {
   const { username, password } = req.body;
@@ -85,7 +85,7 @@ app.post('/admin/signup', (req, res) => {
   }
   Admin.findOne({ username }).then(callback);
 });
-
+ 
 app.post('/admin/login', async (req, res) => {
   const { username, password } = req.headers;
   const admin = await Admin.findOne({ username, password });
