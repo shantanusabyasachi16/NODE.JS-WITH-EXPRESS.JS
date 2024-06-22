@@ -1,3 +1,10 @@
+/*
+Database software refers to software applications designed to store, manage, and retrieve data efficiently.
+These software solutions provide mechanisms for creating, querying, updating, and deleting data, ensuring data integrity,
+security, and reliability.
+ Databases are crucial for various applications, ranging from simple to complex systems,
+*/
+
 //MongoDB is a NoSQL, document-oriented database designed for high performance, high availability, and easy scalability.
 // It stores data in flexible, JSON-like documents, which means fields can vary from document to document and data structure can change over time.
 const bodyParser = require('body-parser');
