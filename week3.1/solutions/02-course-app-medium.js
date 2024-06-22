@@ -21,7 +21,7 @@ const authenticateJwt = (req, res, next) => {
   if (authHeader) {
     const token = authHeader.split(' ')[1];
 
-    jwt.verify(token, secretKey, (err, user) => {
+    jwt.verify(token, secretKey, (err, user) => { 
       if (err) {
         return res.sendStatus(403);
       }
