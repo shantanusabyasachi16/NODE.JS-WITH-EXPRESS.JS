@@ -1,3 +1,8 @@
+//cors error =
+
+//A CORS (Cross-Origin Resource Sharing) error occurs when a web application makes a request to a different domain (origin) than its own, and the server at that different domain does not explicitly allow the request. 
+//This is a security feature implemented in web browsers to prevent malicious websites from making unauthorized requests to other domains.
+
 const express = require('express');
 const bodyParser = require('body-parser');//for post request, to capture body in "post" request
 const path = require('path')
@@ -92,10 +97,4 @@ app.listen(port,()=>{
 });
 
 //we can also install cors to avoid path directory
-
-///cors error =
-
-//A CORS (Cross-Origin Resource Sharing) error occurs when a web application makes a request to a different domain (origin) than its own, and the server at that different domain does not explicitly allow the request. 
-//This is a security feature implemented in web browsers to prevent malicious websites from making unauthorized requests to other domains.
-
 
