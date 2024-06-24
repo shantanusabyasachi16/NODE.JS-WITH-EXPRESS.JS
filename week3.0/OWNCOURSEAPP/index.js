@@ -49,9 +49,18 @@ const User = mongoose.model('User', userSchema);//this is user collections
 const Admin = mongoose.model('Admin', adminSchema);//this is admin collections
 const Course = mongoose.model('Course', courseSchema);//this is courses collections
 
+
+//middleware function
+//
 const authenticateJwt = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+
+  const authHeader = req.headers.authorization;//This line extracts the authorization header from the incoming request's headers
   if (authHeader) {
+
+    //The split(' ') method is called on the authHeader string
+    //The authorization header typically follows the format: Bearer <token>
+   
+   //[1]:In the Authorization header "Bearer <token>", the token is the second part of the split string.
     const token = authHeader.split(' ')[1];
     jwt.verify(token, SECRET, (err, user) => {
       if (err) {
